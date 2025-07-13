@@ -1,6 +1,6 @@
 # 📏 Weight Prediction Web App (Flask + Linear Regression)
 
-A **machine learning web application** built with **Flask** to predict human **weight** (in hectograms) based on **gender and height** using a **Linear Regression** model.
+A **machine learning web application** built with **Flask** to predict human **weight** (in kilograms) based on **gender and height** using a **Linear Regression** model.
 
 ---
 
@@ -8,9 +8,11 @@ A **machine learning web application** built with **Flask** to predict human **w
 
 Predict human weight using a simple regression model trained on a height/gender dataset. This project demonstrates:
 
-* A clear **ML workflow** (data preprocessing, model training, prediction)
-* A clean **Flask web app** for deployment
-* **Good code practices** suitable for ML and web developers
+✅ A clear **Machine Learning workflow** (data preprocessing, model training, prediction)
+
+✅ A clean, minimal **Flask web app** for deployment
+
+✅ **Best practices** suitable for beginner ML + web developers
 
 ---
 
@@ -18,8 +20,8 @@ Predict human weight using a simple regression model trained on a height/gender 
 
 | Technology        | Usage                                |
 | ----------------- | ------------------------------------ |
-| **Python**        | Core language                        |
-| **Flask**         | Web Framework                        |
+| **Python**        | Core programming language            |
+| **Flask**         | Web framework                        |
 | **Pandas**        | Data processing                      |
 | **scikit-learn**  | Machine Learning (Linear Regression) |
 | **HTML (Jinja2)** | Frontend templates                   |
@@ -35,11 +37,12 @@ Predict human weight using a simple regression model trained on a height/gender 
 | ------ | --------------- | --------------- |
 | Male   | 73.84           | 241.89          |
 | Male   | 68.78           | 162.31          |
-| ...    | ...             | ...             |
+| Female | 65.00           | 135.00          |
 
-**Preprocessing:**
+### ⚙️ Preprocessing:
 
-* `Gender`: Encoded as `Male → 1`, `Female → 0`
+* **Gender** encoded as: `Male → 1`, `Female → 0`
+* **Weight (pounds)** is converted to **kilograms** for final output.
 
 ---
 
@@ -58,7 +61,7 @@ cd Flask-Weight-Prediction-App
 pip install -r requirements.txt
 ```
 
-**`requirements.txt`**
+**`requirements.txt`:**
 
 ```
 Flask
@@ -81,78 +84,84 @@ Visit: [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
 
 ## 🖥️ App Workflow
 
-1️⃣ User inputs:
+### 🔹 Input:
 
 * **Gender**: `Male` / `Female`
-* **Height**: Inches (float)
+* **Height**: Inches (numeric)
 
-2️⃣ App predicts:
+### 🔹 Output:
 
-* **Weight** (in **hectograms** for demonstration)
-
-3️⃣ **Prediction Example:**
-
-```plaintext
-Height: 70 inches, Gender: Male
-Predicted Weight: 820.4 hg
-```
+* **Predicted Weight**: Shown in **kilograms (kg)**
 
 ---
 
 ## 📂 Project Structure
 
 ```
-├── app.py                 # Main Flask App with ML logic
+├── app.py               # Main Flask App with ML logic
 ├── templates/
-│   ├── index.html          # Input form
-├── weight-height.csv       # Dataset
-├── requirements.txt        # Dependencies
-└── README.md               # Documentation
+│   └── index.html        # Input form UI
+├── weight-height.csv     # Dataset (Height in inches, Weight in pounds)
+├── requirements.txt      # Dependencies
+└── README.md             # Project Documentation
 ```
 
 ---
 
-## 📌 Key Highlights (For ML Experts)
+## 🔍 Example Prediction
 
-✅ **ML pipeline**: Cleanly separated (Load → Preprocess → Train → Predict)
+**Input:**
 
-✅ **Model efficiency**: Trained once on startup, not per request
+```
+Gender: Male
+Height: 70 inches
+```
 
-✅ **Type hints**: Used for code clarity
+**Output:**
 
-✅ **Proper error handling**
+```
+Predicted Weight: 90.56 kg
+```
 
-✅ **Demonstrates ML → API integration cleanly**
+---
+
+## 📌 Key Highlights (For ML Practitioners)
+
+✅ **Proper ML pipeline:** Load → Encode → Train → Predict
+✅ **Model efficiency:** Trained once at app startup, not per request
+✅ **Type-safe, readable code**
+✅ **Good error handling** for invalid inputs
+✅ **Clean ML-to-API integration with Flask**
 
 ---
 
 ## 🚧 Known Limitations
 
-* No persistent model storage (can be enhanced with `joblib`).
+* No persistent model storage (`joblib` recommended for production)
+* Small sample dataset; accuracy is purely for demonstration
+* Only height and gender used; lacks other health indicators
 
 ---
 
 ## 🔮 Future Enhancements
 
-* Switch to a larger, realistic dataset.
-* Use a **persisted model** with `joblib`.
-* Provide BMI or health insights.
-* Deploy to **Render / Railway / Heroku**.
-* Add **unit tests** and CI.
+* Use a larger, more realistic dataset
+* Store trained model via `joblib`
+* Provide BMI and health category alongside prediction
+* Deploy to **Render / Railway / Heroku**
+* Add unit tests and CI/CD workflows
 
 ---
 
 ## 📄 License
 
-MIT License — Free for educational and commercial use.
+**MIT License** — Free to use for educational and commercial purposes.
 
 ---
 
 ## 🙌 Acknowledgements
 
-* Dataset inspired by common height-weight sample datasets.
-* Flask and scikit-learn for enabling rapid prototyping.
+* Inspired by classic height-weight datasets.
+* Built using **Flask** and **scikit-learn** for rapid prototyping.
 
 ---
-
-
