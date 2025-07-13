@@ -125,8 +125,6 @@ Predicted Weight: 820.4 hg
 
 ## 🚧 Known Limitations
 
-* Very **small dataset**, model accuracy is basic.
-* Converts prediction to **hectograms** artificially for demo purposes.
 * No persistent model storage (can be enhanced with `joblib`).
 
 ---
