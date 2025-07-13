@@ -7,7 +7,7 @@ from sklearn.model_selection import train_test_split
 app = Flask(__name__)
 
 # Load dataset
-dataset = pd.read_csv('data.csv')
+dataset = pd.read_csv('weight-height.csv')
 
 # Encode Gender
 le = LabelEncoder()
