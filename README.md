@@ -128,9 +128,13 @@ Predicted Weight: 90.56 kg
 ## 📌 Key Highlights (For ML Practitioners)
 
 ✅ **Proper ML pipeline:** Load → Encode → Train → Predict
+
 ✅ **Model efficiency:** Trained once at app startup, not per request
+
 ✅ **Type-safe, readable code**
+
 ✅ **Good error handling** for invalid inputs
+
 ✅ **Clean ML-to-API integration with Flask**
 
 ---
