@@ -105,7 +105,6 @@ Predicted Weight: 820.4 hg
 ├── app.py                 # Main Flask App with ML logic
 ├── templates/
 │   ├── index.html          # Input form
-│   └── result.html         # Prediction result
 ├── weight-height.csv       # Dataset
 ├── requirements.txt        # Dependencies
 └── README.md               # Documentation
@@ -116,9 +115,13 @@ Predicted Weight: 820.4 hg
 ## 📌 Key Highlights (For ML Experts)
 
 ✅ **ML pipeline**: Cleanly separated (Load → Preprocess → Train → Predict)
+
 ✅ **Model efficiency**: Trained once on startup, not per request
+
 ✅ **Type hints**: Used for code clarity
+
 ✅ **Proper error handling**
+
 ✅ **Demonstrates ML → API integration cleanly**
 
 ---
