@@ -1,78 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Weight Prediction App</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #74ebd5, #ACB6E5);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            text-align: center;
-            width: 350px;
-        }
-        h1 {
-            margin-bottom: 20px;
-            color: #333;
-        }
-        label {
-            display: block;
-            text-align: left;
-            margin: 10px 0 5px;
-            font-weight: bold;
-        }
-        input, select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            box-sizing: border-box;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 6px;
-            width: 100%;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <title>Weight Prediction (Hectograms)</title>
 </head>
 <body>
+    <h1>Weight Prediction Based on Gender and Height</h1>
 
-    <div class="container">
-        <h1>Weight Prediction</h1>
-        <form method="POST" action="/predict">
-            <label for="Gender">Gender:</label>
-            <select name="Gender" id="Gender" required>
-                <option value="">Select Gender</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </select>
+    <form method="post" action="/predict">
+        Gender:
+        <select name="gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br><br>
+        Height (in inches): <input type="text" name="height" required><br><br>
+        <button type="submit">Predict Weight</button>
+    </form>
 
-            <label for="Height">Height (in inches):</label>
-            <input type="number" step="0.01" name="Height" id="Height" required>
-
-            <button type="submit">Predict Weight</button>
-        </form>
-    </div>
-
+    {% if result %}
+        <h2>Predicted Weight: {{ result }}</h2>
+    {% endif %}
 </body>
 </html>
