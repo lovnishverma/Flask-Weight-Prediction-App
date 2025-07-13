@@ -6,16 +6,16 @@ from sklearn.model_selection import train_test_split
 
 app = Flask(__name__)
 
-# Load dataset
-dataset = pd.read_csv('weight-height.csv')
+# Load dataset from CSV
+dataset = pd.read_csv('data.csv')
 
-# Encode Gender
+# Encode Gender (Male=1, Female=0)
 le = LabelEncoder()
-dataset['Gender'] = le.fit_transform(dataset['Gender'])  # Male=1, Female=0
+dataset['Gender'] = le.fit_transform(dataset['Gender'])
 
 # Features and Labels
 X = dataset[['Gender', 'Height']]
-y = dataset['Weight']
+y = dataset['Weight']  # Weight is in lbs
 
 # Train/Test Split
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
@@ -37,8 +37,11 @@ def predict():
         gender_encoded = 1 if gender.lower() == 'male' else 0
 
         height = float(request.form.get('height'))
-        prediction = model.predict([[gender_encoded, height]])[0]
-        result = f"{prediction:.2f} hectograms (hg)"
+        predicted_lbs = model.predict([[gender_encoded, height]])[0]
+
+        # Convert pounds to kilograms
+        predicted_kg = predicted_lbs / 2.20462
+        result = f"{predicted_kg:.2f} kilograms (kg)"
     except (ValueError, TypeError):
         result = "Invalid input."
 
