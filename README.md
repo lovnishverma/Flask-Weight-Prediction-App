@@ -48,8 +48,8 @@ Predict human weight using a simple regression model trained on a height/gender 
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/weight-prediction-app.git
-cd weight-prediction-app
+git clone https://github.com/lovnishverma/Flask-Weight-Prediction-App.git
+cd Flask-Weight-Prediction-App
 ```
 
 ### 2️⃣ Install Dependencies
